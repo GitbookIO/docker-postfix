@@ -1,3 +1,4 @@
+# VERSION 0.0.0
 FROM ubuntu:trusty
 MAINTAINER Alex Sanz <asans@evirtualpost.com>
 
