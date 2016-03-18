@@ -1,29 +1,32 @@
+## Dockerized postfix
 
-postfix mail server with configurable hostname and trusted hosts and proper
+`postfix` mail server with configurable hostname and trusted hosts and proper
 shutdown handling
 
-Notes
-===
+## Install
 
-By default, connected rfc1918 networks are detected and allowed. Local networks 
+```
+docker pull gitbook/postfix
+```
+
+## Notes
+
+By default, connected rfc1918 networks are detected and allowed. Local networks
 (127.0.0.1, ::1) are also allowed.
 
-Syslog
-===
+## Syslog
 
 Postfix logs to a syslog server. Unless indicated, no syslog server is configured
 or started started. (the phusion baseimage does start a syslog server).
 
 For simplicity, you can bind-mount the one on the host using `-v /dev/log:/dev/log`
 
-Suggested Volumes
-===
+## Suggested Volumes
 
   * `/var/spool/postfix` is the spool directory. Its also where postfix chroots to by default.
   * `/etc/postfix` is the configuation directory
-  
-Options
-===
+
+## Options
 
 You can customize the image behavior using environmental variables or entrypoint
 arguments.
@@ -92,3 +95,7 @@ arguments.
 	    </tr>
 	</tbody>
 </table>
+
+### Thanks
+
+This was originally forked from [onesysadmin/ubuntu-postfix](https://github.com/onesysadmin/ubuntu-postfix) to add semver support etc ...
